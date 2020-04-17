@@ -1,0 +1,89 @@
+﻿body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --cell-size: 40px;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#grid {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    display:flex;
+    flex-direction: column;
+}
+
+.row {
+    height: var(--cell-size);
+    display:flex;
+}
+
+.cell {
+    display: flex;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bcae91;
+    box-sizing: border-box;
+    background-color: #a19076;
+    cursor: pointer;
+}
+
+    .cell.revealed {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .cell.revealed.landmine {
+        background-image: url(../img/mine.svg);
+        background-repeat:no-repeat;
+        background-position: center;
+        background-size: 15px;
+    }
+
+    #message {
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0,0, 0.5);
+        display: none;
+    }
+
+    #message.visible {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+#message-dialog {
+    background-color: #fff;
+    border: 1px solid #a19076;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    align-items: center;
+}
+
+    #message-content {
+        font-family: fantasy;
+        font-size: 60px;
+    }
+
+#btn-new {
+    padding: 10px;
+    border: 1px solid #a19076;
+    background-color: #bcae91;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
